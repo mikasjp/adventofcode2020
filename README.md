@@ -3,8 +3,8 @@ Thank You [Eric](http://was.tl/)!
 
 |   Day  |                                 |   Part 1              |   Part 2              |
 |   -    |   -                             |   -                   |   -                   |
-|   01   |   [day01][Report Repair]        |   :heavy_check_mark:  |   :heavy_check_mark:  |
-|   02   |   [day02][Password Philosophy]  |   :heavy_check_mark:  |   :heavy_check_mark:  |
+|   01   |   [Report Repair][day01]        |   :heavy_check_mark:  |   :heavy_check_mark:  |
+|   02   |   [Password Philosophy][day02]  |   :heavy_check_mark:  |   :heavy_check_mark:  |
 
 [day01]: https://adventofcode.com/2020/day/1
 [day02]: https://adventofcode.com/2020/day/2
