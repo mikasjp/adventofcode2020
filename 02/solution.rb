@@ -10,22 +10,18 @@ input = File.readlines("input.txt")
 
 # First part
 puts input
-    .map {|x|
+    .count {|x|
         x["password"]
             .count(x["letter"])
             .between?(x["range"].first, x["range"].last)
     }
-    .select{|x| x}
-    .count
 
 # Second part
 puts input
-    .map {|x|
+    .count {|x|
         [
             x["password"][x["range"].first-1],
             x["password"][x["range"].last-1]
         ]    
         .count { |y| y==x["letter"] } == 1
     }
-    .select{|x| x}
-    .count
