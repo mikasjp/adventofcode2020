@@ -4,12 +4,10 @@ def slope_check(right, down)
     INPUT
         .each_with_index
         .select{|x,i| i % down == 0}
-        .map {|x,i|
+        .count {|x,i|
             index = i / down * right % x.length
             x[index] == "#"
         }
-        .select {|x| x }
-        .count
 end
 
 # First part
