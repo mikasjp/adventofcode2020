@@ -5,6 +5,7 @@ Thank You [Eric](http://was.tl/)!
 |   -    |   -                             |   -                   |   -                   |
 |   01   |   [Report Repair][day01]        |   :heavy_check_mark:  |   :heavy_check_mark:  |
 |   02   |   [Password Philosophy][day02]  |   :heavy_check_mark:  |   :heavy_check_mark:  |
+|   03   |   [Toboggan Trajectory][day03]  |   :heavy_check_mark:  |   :heavy_check_mark:  |
 
 [day01]: https://adventofcode.com/2020/day/1
 [day02]: https://adventofcode.com/2020/day/2
