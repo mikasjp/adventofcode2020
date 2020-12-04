@@ -25,13 +25,13 @@ VALIDATORS = {
         res
     end,
     "hcl" => Proc.new do |val|
-        val.match?(/#[a-f0-9]{6}/)
+        val.match?(/^#[a-f0-9]{6}$/)
     end,
     "ecl" => Proc.new do |val|
         ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"].include?(val)
     end,
     "pid" => Proc.new do |val|
-        val.match?(/[0-9]{9}/)
+        val.match?(/^\d{9}$/)
     end,
     "cid" => Proc.new do |val|
         true
