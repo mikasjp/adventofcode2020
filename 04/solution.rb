@@ -2,16 +2,16 @@ INPUT = File.read("input.txt").split("\n\n").map(&:strip).map(&:split).map {|x| 
 
 obligatory_fields = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"].sort
 VALIDATORS = {
-    "byr" => Proc.new do |val|
+    "byr" => lambda {|val|
         val.to_i.between?(1920, 2002)
-    end,
-    "iyr" => Proc.new do |val|
+    },
+    "iyr" => lambda {|val|
         val.to_i.between?(2010,2020)
-    end,
-    "eyr" => Proc.new do |val|
+    },
+    "eyr" => lambda {|val|
         val.to_i.between?(2020, 2030)
-    end,
-    "hgt" => Proc.new do |val|
+    },
+    "hgt" => lambda {|val|
         unit = val.split(//).last(2).join("")
         value = val.delete_suffix(unit).to_i
         res = false
@@ -23,19 +23,17 @@ VALIDATORS = {
             res = false
         end
         res
-    end,
-    "hcl" => Proc.new do |val|
+    },
+    "hcl" => lambda {|val|
         val.match?(/^#[a-f0-9]{6}$/)
-    end,
-    "ecl" => Proc.new do |val|
+    },
+    "ecl" => lambda {|val|
         ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"].include?(val)
-    end,
-    "pid" => Proc.new do |val|
+    },
+    "pid" => lambda {|val|
         val.match?(/^\d{9}$/)
-    end,
-    "cid" => Proc.new do |val|
-        true
-    end
+    },
+    "cid" => lambda {|val| true }
 }
 
 valid_passports = INPUT
@@ -53,7 +51,7 @@ puts valid_passports.count
 puts valid_passports
     .count{|x|
         x.map {|y|
-            validator = VALIDATORS.fetch(y.first, Proc.new do |val| false end)
+            validator = VALIDATORS.fetch(y.first, lambda {|val| false })
             validator.call(y.last)
         }.all?
     }
