@@ -8,6 +8,7 @@ Thank You [Eric](http://was.tl/)!
 |   03   |   [Toboggan Trajectory][day03]  |   :heavy_check_mark:  |   :heavy_check_mark:  |
 |   04   |   [Passport Processing][day04]  |   :heavy_check_mark:  |   :heavy_check_mark:  |
 |   05   |   [Binary Boarding][day05]      |   :heavy_check_mark:  |   :heavy_check_mark:  |
+|   06   |   [Custom Customs][day06]       |   :heavy_check_mark:  |   :heavy_check_mark:  |
 
 [day01]: https://adventofcode.com/2020/day/1
 [day02]: https://adventofcode.com/2020/day/2
