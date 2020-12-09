@@ -1,7 +1,7 @@
 # My [Advent of Code 2020](http://adventofcode.com/2020) solutions
 Thank You [Eric](http://was.tl/)!
 
-|   Day  |                                 |   Part 1              |   Part 2              |
+|   Day  |   Name                          |   Part 1              |   Part 2              |
 |   -    |   -                             |   -                   |   -                   |
 |   01   |   [Report Repair][day01]        |   :heavy_check_mark:  |   :heavy_check_mark:  |
 |   02   |   [Password Philosophy][day02]  |   :heavy_check_mark:  |   :heavy_check_mark:  |
@@ -11,6 +11,7 @@ Thank You [Eric](http://was.tl/)!
 |   06   |   [Custom Customs][day06]       |   :heavy_check_mark:  |   :heavy_check_mark:  |
 |   07   |   [Handy Haversacks][day07]     |   :heavy_check_mark:  |   :heavy_check_mark:  |
 |   08   |   [Handheld Halting][day08]     |   :heavy_check_mark:  |   :heavy_check_mark:  |
+|   09   |   [Encoding Error][day09]       |   :heavy_check_mark:  |   :heavy_check_mark:  |
 
 [day01]: https://adventofcode.com/2020/day/1
 [day02]: https://adventofcode.com/2020/day/2
