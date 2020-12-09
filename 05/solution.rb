@@ -18,7 +18,7 @@ passes = INPUT
     }
 
 # First part
-puts passes.map{|x| x.first * 8 + x.last}.max
+puts passes.map{|row, col| row * 8 + col}.max
 
 # Second part
 puts passes
