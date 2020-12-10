@@ -1,4 +1,4 @@
-INPUT = File.readlines("input.txt").map{|x| x.strip.to_i}
+INPUT = File.readlines("input.txt").map{|x| x.strip.to_i}.sort.reverse!
 
 # First part
 used_adapters = [0]
@@ -19,5 +19,12 @@ differences = used_adapters
     .map{|k,v| [k, v.count]}
     .to_h
 
-    # First part
+# First part
 puts differences.fetch(1,0)*differences.fetch(3,0)
+
+# Second part
+a = { INPUT.first+3 => 1 }
+INPUT
+    .append(0)
+    .each{|x| a[x] = (1..3).map{|y| a.fetch(x+y,0)}.sum }
+puts a[0]
