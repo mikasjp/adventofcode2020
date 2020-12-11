@@ -35,24 +35,31 @@ count_neighbors = lambda {|x,y,s|
 puts solve count_neighbors, 4
 
 # Second part
-count_neighbors = lambda {|x,y,s|
-    (1..s.count)
+neighbors_map = INPUT
+    .map{|k,v|
+        x,y = k
+        [k,
+        (1..INPUT.count)
         .map{|d|
             [
-                [d, "N", s.fetch([x,y-d], nil)],
-                [d, "S", s.fetch([x,y+d], nil)],
-                [d, "E", s.fetch([x+d,y], nil)],
-                [d, "W", s.fetch([x-d,y], nil)],
-                [d, "NE", s.fetch([x+d,y-d], nil)],
-                [d, "SE", s.fetch([x+d,y+d], nil)],
-                [d, "SW", s.fetch([x-d,y+d], nil)],
-                [d, "NW", s.fetch([x-d,y-d], nil)]
-            ].select{|q,w,e| !e.nil?}
+                [d, "N", INPUT.fetch([x,y-d], nil), [x,y-d]],
+                [d, "S", INPUT.fetch([x,y+d], nil), [x,y+d]],
+                [d, "E", INPUT.fetch([x+d,y], nil), [x+d,y]],
+                [d, "W", INPUT.fetch([x-d,y], nil), [x-d,y]],
+                [d, "NE", INPUT.fetch([x+d,y-d], nil), [x+d,y-d]],
+                [d, "SE", INPUT.fetch([x+d,y+d], nil), [x+d,y+d]],
+                [d, "SW", INPUT.fetch([x-d,y+d], nil), [x-d,y+d]],
+                [d, "NW", INPUT.fetch([x-d,y-d], nil), [x-d,y-d]]
+            ].select{|q,w,e,c| !e.nil?}
         }
         .flatten(1)
-        .group_by{|dist,dir,stat| dir}
+        .group_by{|dist,dir,stat,coords| dir}
         .map{|k,v| v.first.last}
-        .count{|stat| stat=="#"}
+    ]
+}.to_h
+
+count_neighbors = lambda {|x,y,s|
+    neighbors_map.fetch([x,y]).count{|q| s[q]=="#"}
 }
 
 puts solve count_neighbors, 5
