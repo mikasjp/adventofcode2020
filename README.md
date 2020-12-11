@@ -13,6 +13,7 @@ Thank You [Eric](http://was.tl/)!
 |   08   |   [Handheld Halting][day08]     |   :heavy_check_mark:  |   :heavy_check_mark:  |
 |   09   |   [Encoding Error][day09]       |   :heavy_check_mark:  |   :heavy_check_mark:  |
 |   10   |   [Adapter Array][day10]        |   :heavy_check_mark:  |   :heavy_check_mark:  |
+|   11   |   [Seating System][day11]       |   :heavy_check_mark:  |   :heavy_check_mark:  |
 
 [day01]: https://adventofcode.com/2020/day/1
 [day02]: https://adventofcode.com/2020/day/2
