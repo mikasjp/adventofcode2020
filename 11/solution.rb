@@ -4,7 +4,7 @@ INPUT = File.readlines("input.txt")
     .flatten(2)
     .to_h
 
-def solve count_neighbors
+def solve count_neighbors, tolerance
     state = INPUT
     loop do
         new_state = state.map{|k,v|
@@ -14,7 +14,7 @@ def solve count_neighbors
             if v=="L" && neighbors==0
                 res = [k, "#"]
             end
-            if v=="#" && neighbors>=4
+            if v=="#" && neighbors>=tolerance
                 res = [k, "L"]
             end
             res
@@ -32,4 +32,27 @@ count_neighbors = lambda {|x,y,s|
             .flatten(1).select{|n| n!=[x,y]}
             .count{|n,m| s.fetch([n,m],nil)=="#" }
 }
-puts solve count_neighbors
+puts solve count_neighbors, 4
+
+# Second part
+count_neighbors = lambda {|x,y,s|
+    (1..s.count)
+        .map{|d|
+            [
+                [d, "N", s.fetch([x,y-d], nil)],
+                [d, "S", s.fetch([x,y+d], nil)],
+                [d, "E", s.fetch([x+d,y], nil)],
+                [d, "W", s.fetch([x-d,y], nil)],
+                [d, "NE", s.fetch([x+d,y-d], nil)],
+                [d, "SE", s.fetch([x+d,y+d], nil)],
+                [d, "SW", s.fetch([x-d,y+d], nil)],
+                [d, "NW", s.fetch([x-d,y-d], nil)]
+            ].select{|q,w,e| !e.nil?}
+        }
+        .flatten(1)
+        .group_by{|dist,dir,stat| dir}
+        .map{|k,v| v.first.last}
+        .count{|stat| stat=="#"}
+}
+
+puts solve count_neighbors, 5
